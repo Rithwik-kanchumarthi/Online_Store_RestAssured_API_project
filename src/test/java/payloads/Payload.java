@@ -1,11 +1,36 @@
 package payloads;
 
-
+/*
+{
+    email:'John@gmail.com',
+    username:'johnd',
+    password:'m38rmF$',
+    name:{
+        firstname:'John',
+        lastname:'Doe'
+    },
+    address:{
+        city:'kilcoole',
+        street:'7835 new road',
+        number:3,
+        zipcode:'12926-3874',
+        geolocation:{
+            lat:'-37.3159',
+            long:'81.1496'
+        }
+    },
+    phone:'1-570-236-7033'
+}
+*/
 import java.util.Random;
 
 import com.github.javafaker.Faker;
 
+import pojo.Address;
+import pojo.Geolocation;
+import pojo.Name;
 import pojo.Product;
+import pojo.User;
 
 
 public class Payload {
@@ -29,14 +54,53 @@ public class Payload {
 		return new Product(name, price, description, imageUrl, category);
 	}
 	
+	//User
+	
+	public static User userPayload()
+	{
+		//name
+		String firstname=faker.name().firstName();
+		String lastname=faker.name().lastName();
+		
+		Name name=new Name(firstname,lastname);
+		
+		//location
+		String lat=faker.address().latitude();
+		String lng=faker.address().longitude();
+		
+		Geolocation location=new Geolocation(lat,lng);
+		
+		
+		//Address
+		
+		String city=faker.address().city();
+		String street=faker.address().streetName();
+		int number=random.nextInt(100);
+		String zipcode=faker.address().zipCode();
+		Address address=new Address(city,street,number,zipcode,location);
+		
+		
+		//User
+		String email=faker.internet().emailAddress();
+		String username=faker.name().username();
+		String password=faker.internet().password();
+		String phonenumber=faker.phoneNumber().cellPhone();
+		
+		User user=new User(email,username,password,name,address,phonenumber);
+		
+		return user;
+		
+	}
+		
+	
+	
+	
 	
 	//Cart
 	
 	
 	
-	//User
 	
 	
 	//Login
 }
-
