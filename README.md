@@ -75,4 +75,4 @@ Git is used for source code management and GitHub is used for repository hosting
 **Rithwik Kanchumarhti**
 
 ---
-This framework demonstrates best practices for REST API automation using Java, Rest Assured, TestNG, Maven, reporting tools, and CI/CD integration.
+This framework demonstrates best practices for REST API automation using Java, Rest Assured, TestNG, Maven, Allure and Extent Reporting tools, and CI/CD integration.
