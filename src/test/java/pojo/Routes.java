@@ -1,4 +1,4 @@
-package routes;
+package pojo;
 
 public class Routes {
 
